@@ -26,7 +26,7 @@ function playRound(playerSelection, computerSelection) {
 
     if(playerSelection === computerSelection) {
         draw++;
-        return "Tie, No Winner & Loser! play another round.";
+        return "Tie, No Winner or Loser!";
     }
 
     else {
