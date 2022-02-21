@@ -73,13 +73,13 @@ function game() {
     }
 
     if(playerWins > computerWins)
-        return "Total Score:You Win!\n\nPlayer: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + draw;
+        return "\nScore: You Win!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + draw;
     
     else if(playerWins < computerWins)
-        return "Total Score:You Lose!\n\nPlayer: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + draw;
+        return "\nScore: You Lose!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + draw;
 
     else
-        return "Total Score:Draw!\n\nPlayer: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + draw;
+        return "\nScore: Draw!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + draw;
 }
 
 console.log(game());
