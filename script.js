@@ -1,6 +1,6 @@
 let playerWins = 0;
 let computerWins = 0;
-let draw = 0
+let draw = 0;
 
 function computerPlay() {
 
