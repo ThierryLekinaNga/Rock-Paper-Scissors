@@ -69,7 +69,7 @@ function game() {
 
         const playerSelection = prompt("Rock, Paper, or Scissors?", " ").toLowerCase();
         const computerSelection = computerPlay();
-        playRound(playerSelection, computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
     }
 
     if(playerWins > computerWins)
