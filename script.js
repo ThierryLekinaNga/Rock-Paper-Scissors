@@ -1,6 +1,6 @@
 let playerWins = 0;
 let computerWins = 0;
-let draw = 0;
+let tie = 0;
 
 function computerPlay() {
 
@@ -25,7 +25,7 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
 
     if(playerSelection === computerSelection) {
-        draw++;
+        tie++;
         return "Tie, No Winner or Loser!";
     }
 
@@ -73,13 +73,13 @@ function game() {
     }
 
     if(playerWins > computerWins)
-        return "\nScore: You Win!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + draw;
+        return "\nScore: You Win!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + tie;
     
     else if(playerWins < computerWins)
-        return "\nScore: You Lose!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + draw;
+        return "\nScore: You Lose!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + tie;
 
     else
-        return "\nScore: Draw!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + draw;
+        return "\nScore: Draw!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + tie;
 }
 
 console.log(game());
