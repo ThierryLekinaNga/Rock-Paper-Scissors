@@ -7,6 +7,47 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Rock, Paper, Scissors Game</h1>
+    <div id="gameZone">
+        <div class="zone" id="zone-1"></div>
+        <div id="container">
+            <div id="results">
+                <div class="liveScore" id="item-1">
+                    <div class="score" id="player"></div>
+                    <div class="score" id="playerLiveScore"></div>
+                </div>
+                <div id="item-2">
+                    <div id="subItem-1">
+                        <h2>Challenge The Computer</h2>
+                        <sub>Choose your target below.</sub>
+                    </div>
+                    <div id="subItem-2">
+                        <label>
+                            <span>First to :</span>
+                            <select>
+                                <option value="5" selected>5</option>
+                                <option value="10">10</option>
+                            </select>
+                        </label>
+                        <div id="newGame">
+                            <p id="roundResult">Click any button below to start the game</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="liveScore" id="item-3">
+                    <div class="score" id="computer"></div>
+                    <div class="score" id="computerLiveScore"></div>
+                </div>
+                
+            </div>
+            <div id="button-container">
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
+            </div>
+        </div>
+        <div class="zone" id="zone-2"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

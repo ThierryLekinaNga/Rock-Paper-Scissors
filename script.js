@@ -63,24 +63,84 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
+function targetSelection() {
 
-    for (let i = 0; i < 5; i++) {
+    const select = document.querySelector('select');
+    let target = parseInt(select.options[select.selectedIndex].value);
 
-        const playerSelection = prompt("Rock, Paper, or Scissors?", " ").toLowerCase();
-        const computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
-    }
+    select.addEventListener('change', () => {
 
-    if(playerWins > computerWins)
-        return "\nScore: You Win!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + tie;
-    
-    else if(playerWins < computerWins)
-        return "\nScore: You Lose!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + tie;
-
-    else
-        return "\nScore: Draw!\nYou: " + playerWins + " Vs Computer: " + computerWins + ", Tie: " + tie;
+        target = parseInt(select.value);
+        return target;
+        
+    });
+    return target;
 }
 
-console.log(game());
+function game() {
 
+    const buttons = document.querySelectorAll('button');
+    const roundResult = document.querySelector('#roundResult');
+    const player = document.querySelector('#player');
+    const computer = document.querySelector('#computer');
+    const playerLiveScore = document.querySelector('#playerLiveScore')
+    const computerLiveScore = document.querySelector('#computerLiveScore');
+    const select = document.querySelector('select');
+    const newGame = document.querySelector('#newGame');
+    const message = document.createElement('sub');
+    message.style.color = 'cornflowerblue';
+    message.style.fontWeight = 'bold';
+    const zone1 = document.querySelector('#zone-1');
+    const zone2 = document.querySelector('#zone-2');
+    
+    buttons.forEach((button) => {
+
+        button.addEventListener('click', () => {
+            
+            const playerSelection = button.id;
+            select.disabled = true;
+            const computerSelection = computerPlay();
+            const selectionArray = ['rock', 'paper', 'scissors'];
+            let i = 0; 
+
+            while(i < selectionArray.length) {
+
+                if(playerSelection === selectionArray[i]) {
+
+                    roundResult.textContent = playRound(playerSelection, computerSelection);
+                    player.textContent = "PLAYER";
+                    computer.textContent = "COMPUTER";
+                    playerLiveScore.textContent = playerWins;
+                    computerLiveScore.textContent = computerWins;
+                    break;
+                } 
+
+                else
+                    i++; 
+            }
+
+            if(playerWins === targetSelection() || computerWins === targetSelection()) {
+
+                for(let i = 0; i < buttons.length; i++)
+                    buttons[i].disabled = true;
+
+                if(playerWins > computerWins) {
+
+                    zone1.textContent = "YOU";
+                    zone2.textContent = "WON";
+                }
+                else {
+
+                    zone1.textContent = "YOU";
+                    zone2.textContent = "LOST";
+                }
+
+                message.textContent = "Reload the page to play a new game.";
+                newGame.appendChild(message);
+            }
+        });
+    });
+    
+}
+
+game();

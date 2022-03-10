@@ -2,4 +2,4 @@
 
 The Odin Project Rock Paper Scissors Project
 
-Code @ThierryLekinaNga, February, 21, 2022.
+Code @ThierryLekinaNga, March, 10, 2022.
