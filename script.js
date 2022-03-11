@@ -107,7 +107,7 @@ function game() {
 
                 if(playerSelection === selectionArray[i]) {
 
-                    roundResult.textContent = playRound(playerSelection, computerSelection);
+                    roundResult.textContent = '\"' + playRound(playerSelection, computerSelection) + '\"';
                     player.textContent = "PLAYER";
                     computer.textContent = "COMPUTER";
                     playerLiveScore.textContent = playerWins;
